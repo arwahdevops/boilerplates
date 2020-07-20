@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  dws:
+  my-db:
     privileged: true
     devices:
     - "/dev/fuse:/dev/fuse"
