@@ -17,7 +17,15 @@ RUN     \
 		&& add-apt-repository universe \
 		&& add-apt-repository ppa:certbot/certbot \
         && apt-get update \
-    && apt-get install -y software-properties-common curl apache2 nano cron certbot python-certbot-apache openssh-server \
+    && apt-get install -y \
+    software-properties-common \
+    curl \
+    apache2 \
+    nano \
+    cron \
+    certbot \
+    python-certbot-apache \
+    openssh-server \
         # Cleaning
         && apt-get purge -y --auto-remove $BUILD_DEPS \
         && apt-get autoremove -y \
