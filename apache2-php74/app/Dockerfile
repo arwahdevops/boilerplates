@@ -19,7 +19,25 @@ RUN     \
         && add-apt-repository -y ppa:ondrej/php \
         && add-apt-repository -y ppa:ondrej/apache2 \
         && apt-get update \
-    && apt-get install -y curl apache2 libapache2-mod-php7.4 php7.4-cli php7.4-readline php7.4-mbstring php7.4-zip php7.4-intl php7.4-xml php7.4-json php7.4-curl php7.4-gd php7.4-pgsql php7.4-gd php7.4-mysql php-pear \
+    && apt-get install -y \
+    nano \
+    cron \
+    curl \
+    apache2 \
+    libapache2-mod-php7.4 \
+    php7.4-cli \
+    php7.4-readline \
+    php7.4-mbstring \
+    php7.4-zip \
+    php7.4-intl \
+    php7.4-xml \
+    php7.4-json \
+    php7.4-curl \
+    php7.4-gd \
+    php7.4-pgsql \
+    php7.4-gd \
+    php7.4-mysql \
+    php-pear \
     # Apache settings
     && a2enmod rewrite php7.4 \
         # Install composer
@@ -32,5 +50,7 @@ RUN     \
 
 EXPOSE 80 443
 
-# By default, simply start apache.
+# Start apache.
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+# Start cron
+CMD ["cron", "-f"]

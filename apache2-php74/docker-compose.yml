@@ -5,6 +5,8 @@ services:
     devices:
     - "/dev/fuse:/dev/fuse"
     build: ./app
+    image: riki-apache-php74
+    container_name: app-apache
     restart: always
     expose:
       - 80
