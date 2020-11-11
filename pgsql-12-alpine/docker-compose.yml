@@ -5,7 +5,8 @@ services:
     devices:
     - "/dev/fuse:/dev/fuse"
     build: ./app
-    image: postgres:12.3-alpine
+    image: postgresql12-3-alpine
+    container_name: db-pgsql-12
     restart: always
     environment:
       POSTGRES_USER: postgres
