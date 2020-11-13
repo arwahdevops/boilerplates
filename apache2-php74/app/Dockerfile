@@ -48,7 +48,7 @@ RUN     \
         && apt-get autoremove -y \
         && rm -rf /var/lib/apt/lists/* \
         && chown www-data:www-data ${PHP_DATA_DIR} -Rf
-#Start Cron
+#Cron setting
 RUN mkdir /startup
 COPY start-cron.sh /startup
 RUN chmod 755 /startup/start-cron.sh
