@@ -50,8 +50,5 @@ RUN     \
         && chown www-data:www-data ${PHP_DATA_DIR} -Rf
 
 EXPOSE 80 443
-
 # Start apache.
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
-# Start cron
-CMD ["cron", "-f"]
