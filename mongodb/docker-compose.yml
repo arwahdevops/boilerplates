@@ -1,0 +1,10 @@
+
+version: "3.5"
+
+services:
+  mongo:
+    container_name: mongodb
+    image: mongo:4.2
+    ports:
+      - 27017:27017
+    command: mongod
