@@ -2,6 +2,7 @@ version: '3.7'
 services:
   proxy:
     build: .
+    image: apache2-proxy
     container_name: apache-proxy
     restart: always
     expose:
@@ -9,3 +10,9 @@ services:
     ports:
       - 80:80
       - 443:443
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    name: proxy_frontend
