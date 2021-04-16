@@ -7,12 +7,10 @@ ENV LANG=${OS_LOCALE} \
     LANGUAGE=${OS_LOCALE} \
     LC_ALL=${OS_LOCALE} \
     DEBIAN_FRONTEND=noninteractive
-
 RUN     \
         BUILD_DEPS='software-properties-common' \
     && dpkg-reconfigure locales \
         && apt-get install --no-install-recommends -y $BUILD_DEPS \
-		&& apt-get install --no-install-recommends -y $BUILD_DEPS \
         && add-apt-repository -y ppa:ondrej/apache2 \
 		&& add-apt-repository universe \
 		&& add-apt-repository ppa:certbot/certbot \
