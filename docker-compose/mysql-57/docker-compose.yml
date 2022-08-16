@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  mysql_db_container:
+    image: mysql:5.7
+    container_name: mysql-container
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: qwebnm123
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_db_data:/var/lib/mysql
+
+volumes:
+  mysql_db_data:
