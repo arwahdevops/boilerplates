@@ -1,5 +1,4 @@
 FROM ubuntu:bionic
-MAINTAINER rikipermana <rikipermana@live.com>
 
 ENV OS_LOCALE="en_US.UTF-8"
 RUN apt-get update && apt-get install -y locales && locale-gen ${OS_LOCALE}
