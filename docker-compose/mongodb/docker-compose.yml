@@ -1,10 +1,27 @@
 version: "3.5"
 
 services:
-  mongo:
+  mongo-staging:
     image: mongo:latest
-    container_name: mongodb
+    container_name: mongodb-staging
     restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=rootpassword
     ports:
       - 27017:27017
-    command: mongod
+    networks: 
+        - staging
+    volumes:
+        - mongodb-vol-staging:/data/db
+        
+networks:
+  staging:
+    external: true
+    name: staging
+
+volumes:
+  mongodb-vol-staging:
+    external: true
+    name: mongodb-vol-staging
