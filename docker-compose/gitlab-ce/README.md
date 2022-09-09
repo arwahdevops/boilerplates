@@ -14,7 +14,7 @@ sudo timedatectl set-ntp on
 ```
 sudo apt install certbot
 
-sudo certbot certonly --rsa-key-size 2048 --standalone --agree-tos --no-eff-email --email scr34mz@gmail.com -d gitlab.xrick.xyz
+sudo certbot certonly --rsa-key-size 2048 --standalone --agree-tos --no-eff-email --email yourmail@gmail.com -d gitlab.xrick.xyz
 
 sudo mkdir -p /srv/gitlab/config/ssl/
 
